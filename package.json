@@ -6,6 +6,8 @@
   "scripts": {
     "start": "npx ./node_modules/ts-node/dist/bin.js ./src/server/server.ts",
     "clean": "rm rf public/scripts/*",
+    "lint": "./node_modules/.bin/eslint . --ext .js,.ts,.tsx",
+    "lint-fix": "./node_modules/.bin/eslint . --fix --ext .js,.ts,.tsx",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npx rollup -c",
     "build-prod": "npx rollup -c --prod"
