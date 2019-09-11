@@ -3,7 +3,7 @@
         [
             "@babel/env",
             {
-                "useBuiltIns": "entry"
+                "useBuiltIns": "usage"
             },
             "@babel/typescript"
         ]
