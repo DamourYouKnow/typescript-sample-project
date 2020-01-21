@@ -5,8 +5,7 @@ applications using express.
 
 ## Features
 - Express static server.
-- Compile client side TypeScript to JavaScript using the TypeScript compiler 
-and Babel.
+- Compile client side TypeScript to JavaScript.
 - TypeScript sourcemaps for client side code in development build.
 - Minify scripts in production build.
 
