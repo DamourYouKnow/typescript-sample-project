@@ -5,7 +5,7 @@ import {uglify} from 'rollup-plugin-uglify';
 
 const extensions = ['.js', '.jsx', '.ts', '.tsx'];
 
-export default function(config) {
+export default function() {
     const prod = process.env.BUILD === 'production' ? true : false;
     console.log(`Building ${prod ? 'prod' : 'dev'}`);
 
