@@ -1,6 +1,6 @@
 import commonjs from '@rollup/plugin-commonjs';
 import resolve from '@rollup/plugin-node-resolve';
-import typescript from 'rollup-plugin-typescript2';
+import typescript from '@rollup/plugin-typescript';
 import {uglify} from 'rollup-plugin-uglify';
 
 const extensions = ['.js', '.jsx', '.ts', '.tsx'];
@@ -14,12 +14,12 @@ export default function(config) {
         plugins: [
             resolve({extensions}),
             typescript({
-                tsconfigOverride: {
-                    compilerOptions: {
-                        sourceMap: prod ? false : true,
-                        module: 'es2015'
-                    }
-                }
+                sourceMap: prod ? false : true,
+                module: 'es2015',
+                target: 'es5',
+                strict: true,
+                moduleResolution: 'node',
+                allowSyntheticDefaultImports: true,
             }),
             commonjs(),
             ...(prod ? [uglify()] : [])
