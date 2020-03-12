@@ -11,24 +11,26 @@ export default function() {
 
     return {
         input: './src/client/app.ts',
-        plugins: [
-            resolve({extensions}),
-            typescript({
-                sourceMap: prod ? false : true,
-                module: 'es2015',
-                target: 'es5',
-                strict: true,
-                moduleResolution: 'node',
-                allowSyntheticDefaultImports: true,
-            }),
-            commonjs(),
-            ...(prod ? [uglify()] : [])
-        ],
         output: {
             input: 'src/client/app.ts',
             file: 'public/scripts/app.js',
             format: 'iife',
             sourcemap: prod ? undefined : 'inline'
         },
+        plugins: [
+            resolve({extensions}),
+            commonjs(),
+            typescript({
+                module: 'es2015',
+                target: 'es5',
+                strict: true,
+                moduleResolution: 'node',
+                allowSyntheticDefaultImports: true,
+                sourceMap: !prod,
+                inlineSourceMap: !prod,
+                inlineSources: !prod
+            }),
+            ...(prod ? [uglify()] : [])
+        ],
     }
 };
