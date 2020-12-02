@@ -22,6 +22,7 @@ export default function() {
             resolve({browser: true}),
             commonjs(),
             typescript({
+                target: 'es2017',
                 sourceMap: !prod,
                 inlineSourceMap: !prod,
                 inlineSources: !prod
