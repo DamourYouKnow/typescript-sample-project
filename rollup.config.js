@@ -1,9 +1,9 @@
 import commonjs from '@rollup/plugin-commonjs';
 import resolve from '@rollup/plugin-node-resolve';
 import typescript from '@rollup/plugin-typescript';
-import babel from 'rollup-plugin-babel';
-import {terser} from 'rollup-plugin-terser';
-import {DEFAULT_EXTENSIONS} from '@babel/core';
+import { babel } from '@rollup/plugin-babel';
+import { terser } from 'rollup-plugin-terser';
+import { DEFAULT_EXTENSIONS } from '@babel/core';
 
 export default function() {
     const prod = process.env.BUILD === 'production';
@@ -34,7 +34,7 @@ export default function() {
                     '.ts',
                     '.tsx'
                 ],
-                runtimeHelpers: true
+                babelHelpers: 'runtime'
             }),
             ...(prod ? [terser()] : [])
         ],
