@@ -7,7 +7,6 @@ applications using express.
 - Express static server.
 - Compile client side TypeScript to JavaScript.
 - TypeScript sourcemaps for client side code in development build.
-- Backwards compatibility with Internet Explorer 11 using Babel and CoreJS.
 - Minify scripts in production build.
 
 ## Usage

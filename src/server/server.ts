@@ -1,7 +1,7 @@
 import * as path from 'path';
-import * as express from 'express';
+import express, { Express } from 'express';
 
-const app = express();
+const app: Express = express();
 const port = 8080;
 
 app.use(express.static(path.join(__dirname, '../../public')));
