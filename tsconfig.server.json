@@ -1,9 +1,9 @@
 {
     "include": [
-        "src/client"
+        "src/server"
     ],
     "compilerOptions": {
-        "module": "ESNext",
+        "module": "NodeNext",
         "target": "es6",
         "esModuleInterop": true
     }
